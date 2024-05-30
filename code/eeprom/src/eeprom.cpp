@@ -28,6 +28,7 @@ EEPROM::EEPROM() {
 }
 
 void EEPROM::begin() {
+    Serial.begin(SERIAL_OUT_FREQ);
     pinMode(SER_PIN, OUTPUT);
     pinMode(SCK_PIN, OUTPUT);
     pinMode(RCK_PIN, OUTPUT);

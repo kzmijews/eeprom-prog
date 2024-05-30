@@ -7,7 +7,7 @@
 #ifndef EEPROM_H
 #define EEPROM_H
 
-#include "Android.h"
+#include "Arduino.h"
 #include<stdio.h>
 
 class EEPROM {
@@ -50,6 +50,6 @@ class EEPROM {
          * Function used to clean whole EEPROM memory data
          */
         void cleanEEPROM();
-}
+};
 
-#endif
+#endif /* !EEPROM_H! */
