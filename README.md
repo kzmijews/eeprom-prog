@@ -1,3 +1,3 @@
 # EEPROM programer
 
-TBD
+EEPROM programer dedicated for AT28C16 EEPROM memory.
