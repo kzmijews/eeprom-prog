@@ -46,7 +46,7 @@ void EEPROM::setAddress(unsigned int address, bool rw_bit) {
     digitalWrite(RCK_PIN , LOW);
 }
 
-byte EEPROM::readEEPROM(unsigned int address) {
+byte EEPROM::read(unsigned int address) {
     for(int pin_id = EEPROM_D0_PIN; pin_id <= EEPROM_D7_PIN; pin_id++) {
         // Arduino input, EEPROM output
         pinMode(pin_id, INPUT);
@@ -59,7 +59,7 @@ byte EEPROM::readEEPROM(unsigned int address) {
     return data;
 }
 
-void EEPROM::writeEEPROM(unsigned int address, byte data) {
+void EEPROM::write(unsigned int address, byte data) {
     for(int pin_id = EEPROM_D0_PIN; pin_id <= EEPROM_D7_PIN; pin_id++) {
         // Arduino output, EEPROM input
         pinMode(pin_id, OUTPUT);
@@ -75,7 +75,7 @@ void EEPROM::writeEEPROM(unsigned int address, byte data) {
     delay(WRITE_OP_TIME_MS);
 }
 
-void EEPROM::printEEPROM(byte data_row_size, unsigned int data_total_size) {
+void EEPROM::print(byte data_row_size, unsigned int data_total_size) {
     Serial.println("\n");
     if(data_total_size > EEPROM_SIZE) {
         char* err_msg = (char*) malloc(122);
@@ -94,7 +94,7 @@ void EEPROM::printEEPROM(byte data_row_size, unsigned int data_total_size) {
     for(unsigned int base_addr = 0x00; base_addr < data_total_size; base_addr += data_row_size) {
         int serial_out_buf_offset = sprintf(p_serial_out_buf, "%08x: ", base_addr);
         for(unsigned int offset_addr = 0; offset_addr < data_row_size; offset_addr++) {
-            serial_out_buf_offset += sprintf(p_serial_out_buf + serial_out_buf_offset, "%02x ", readEEPROM(base_addr + offset_addr));
+            serial_out_buf_offset += sprintf(p_serial_out_buf + serial_out_buf_offset, "%02x ", read(base_addr + offset_addr));
         }
         p_serial_out_buf[serial_out_buf_offset] = '\0';
         Serial.println(p_serial_out_buf);
@@ -103,12 +103,12 @@ void EEPROM::printEEPROM(byte data_row_size, unsigned int data_total_size) {
     Serial.println("\n");
 }
 
-void EEPROM::cleanEEPROM() {
+void EEPROM::clean() {
     const byte EMPTY_BYTE = 0xFF;
     for(unsigned int address = 0x0; address < EEPROM_SIZE; address++) {
-        byte curr_byte_val = readEEPROM(address);
+        byte curr_byte_val = read(address);
         if(curr_byte_val != EMPTY_BYTE) {
-            writeEEPROM(address, EMPTY_BYTE);
+            write(address, EMPTY_BYTE);
         }
     }
 }
