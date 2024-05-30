@@ -961,6 +961,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="SUPPLY1" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY2" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -979,14 +980,15 @@ In this library the device names are the same as the pin names of the symbols, t
 <instance part="GND2" gate="1" x="-25.4" y="-17.78"/>
 <instance part="GND3" gate="1" x="63.5" y="12.7"/>
 <instance part="GND4" gate="1" x="45.72" y="-17.78"/>
-<instance part="SUPPLY1" gate="G$1" x="58.42" y="116.84"/>
+<instance part="SUPPLY1" gate="G$1" x="58.42" y="119.38"/>
 <instance part="GND1" gate="1" x="58.42" y="76.2"/>
 <instance part="GND5" gate="1" x="45.72" y="-2.54"/>
+<instance part="SUPPLY2" gate="G$1" x="-25.4" y="119.38"/>
 </instances>
 <busses>
-<bus name="GND,RCK,SCK,SER">
+<bus name="GND,RCK,SCK,SER,VCC">
 <segment>
-<wire x1="-27.94" y1="104.14" x2="-27.94" y2="-2.54" width="0.762" layer="92"/>
+<wire x1="-27.94" y1="106.68" x2="-27.94" y2="-2.54" width="0.762" layer="92"/>
 <label x="-30.48" y="-2.54" size="1.778" layer="95" rot="R90"/>
 </segment>
 </bus>
@@ -1022,18 +1024,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="-25.4" y1="-12.7" x2="-25.4" y2="-15.24" width="0.1524" layer="91"/>
 <wire x1="10.16" y1="-12.7" x2="-25.4" y2="-12.7" width="0.1524" layer="91"/>
 <junction x="-25.4" y="-12.7"/>
-</segment>
-<segment>
-<wire x1="-27.94" y1="48.26" x2="-25.4" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="A" pin="SCL"/>
-<wire x1="-25.4" y1="45.72" x2="10.16" y2="45.72" width="0.1524" layer="91"/>
-<label x="2.54" y="45.72" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="-27.94" y1="5.08" x2="-25.4" y2="2.54" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="A" pin="SCL"/>
-<wire x1="-25.4" y1="2.54" x2="10.16" y2="2.54" width="0.1524" layer="91"/>
-<label x="2.54" y="2.54" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="A" pin="!CE"/>
@@ -1504,7 +1494,24 @@ In this library the device names are the same as the pin names of the symbols, t
 <pinref part="ARDUINO_NANO1" gate="G$1" pin="5V"/>
 <wire x1="35.56" y1="106.68" x2="58.42" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="SUPPLY1" gate="G$1" pin="VCC"/>
-<wire x1="58.42" y1="106.68" x2="58.42" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="106.68" x2="58.42" y2="116.84" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="-27.94" y1="48.26" x2="-25.4" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="IC2" gate="A" pin="SCL"/>
+<wire x1="-25.4" y1="45.72" x2="10.16" y2="45.72" width="0.1524" layer="91"/>
+<label x="2.54" y="45.72" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="-27.94" y1="5.08" x2="-25.4" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="IC3" gate="A" pin="SCL"/>
+<wire x1="-25.4" y1="2.54" x2="10.16" y2="2.54" width="0.1524" layer="91"/>
+<label x="2.54" y="2.54" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="-27.94" y1="106.68" x2="-25.4" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="-25.4" y1="109.22" x2="-25.4" y2="116.84" width="0.1524" layer="91"/>
+<pinref part="SUPPLY2" gate="G$1" pin="VCC"/>
 </segment>
 </net>
 </nets>
