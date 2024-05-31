@@ -31,15 +31,15 @@ go into: File --> Preferences --> Settings --> Sketchbook location), and load it
 
 ## Usage
 Available API:
-- begin(): configure pins and serial output
-- setAddress(unsigned int address, bool rw_bit): choose memory address to perform action over the pointed cell
-- read(unsigned int address): read byte of data from memory address
-- write(unsigned int address, byte data): write byte of data under memory address
-- print(byte data_row_size, unsigned int data_total_size): print on serial output (COM) piece of memory content
-- clean(): erase whole memory chip (write 0xFF)
+- **begin()**: configure pins and serial output
+- **setAddress(unsigned int address, bool rw_bit)**: choose memory address to perform action over the pointed cell
+- **read(unsigned int address)**: read byte of data from memory address
+- **write(unsigned int address, byte data)**: write byte of data under memory address
+- **print(byte data_row_size, unsigned int data_total_size)**: print on serial output (COM) piece of memory content
+- **clean()**: erase whole memory chip (write 0xFF)
 
 Example:
-```C
+```cpp
 #include <eeprom.h>
 
 EEPROM eeprom;
