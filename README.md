@@ -13,6 +13,26 @@ Electrical schema was created in [EAGLE](https://www.autodesk.com/products/eagle
     </p>
 </div>
 
+Same as board design:
+
+<div>
+    <p align="center" width="100%">
+        <img src="design/imgs/board-eeprom-prog-top.png">
+    </p>
+    <p align="center">
+        <i>Figure 1.2: top layer of EEPROM prog board</i>
+    </p>
+</div>
+
+<div>
+    <p align="center" width="100%">
+        <img src="design/imgs/board-eeprom-prog-bottom.png">
+    </p>
+    <p align="center">
+        <i>Figure 1.3: bottom layer of EEPROM prog board</i>
+    </p>
+</div>
+
 It was done based on Arduino Nano 3.0 (ATmega328P):
 
 <div>
@@ -20,13 +40,13 @@ It was done based on Arduino Nano 3.0 (ATmega328P):
         <img src="design/imgs/impl-eeprom-prog.png">
     </p>
     <p align="center">
-        <i>Figure 1.2: Possible implementation on prototype board</i>
+        <i>Figure 1.4: Possible implementation on prototype board</i>
     </p>
 </div>
 
-Software library is written in C++, available in `code/eeprom`.
+Software library is written in C++, and it's available in `code/eeprom`.
 To use it copy `eeprom` folder into your sketch directory (to check directory from [Arduino IDE](https://www.arduino.cc/en/software):
-go into: File --> Preferences --> Settings --> Sketchbook location), and load it (Sketch --> Include Library --> eeprom). It will add
+go into: File -> Preferences -> Settings -> Sketchbook location), and load it (Sketch -> Include Library -> eeprom). It will add
 "include <eeprom.h>" header file to your project.
 
 ## Usage

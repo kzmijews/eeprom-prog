@@ -1181,7 +1181,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <label x="2.54" y="-2.54" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$17" class="0">
+<net name="CARRY" class="0">
 <segment>
 <pinref part="IC2" gate="A" pin="QH*"/>
 <wire x1="35.56" y1="30.48" x2="38.1" y2="30.48" width="0.1524" layer="91"/>
