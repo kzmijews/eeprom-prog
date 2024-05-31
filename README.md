@@ -9,7 +9,7 @@ Electrical schema was created in [EAGLE](https://www.autodesk.com/products/eagle
         <img src="design/imgs/rel-eeprom-prog.png">
     </p>
     <p align="center">
-        <i>Figure 1.1: EEPROM prog schema"</i>
+        <i>Figure 1.1: EEPROM prog schema</i>
     </p>
 </div>
 
@@ -20,7 +20,7 @@ It was done based on Arduino Nano 3.0 (ATmega328P):
         <img src="design/imgs/impl-eeprom-prog.png">
     </p>
     <p align="center">
-        <i>Figure 1.2: Possible implementation on prototype board"</i>
+        <i>Figure 1.2: Possible implementation on prototype board</i>
     </p>
 </div>
 
