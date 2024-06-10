@@ -47,9 +47,17 @@ class EEPROM {
          */
         void print(byte data_row_size, unsigned int data_total_size);
         /**
-         * Function used to clean whole EEPROM memory data
+         * Function used to clean whole EEPROM memory data (0x00)
          */
         void clean();
+        /**
+         * Function used to clean whole EEPROM memory data (0xFF)
+         */
+        void erase();
+        /**
+         * Function to write whole EEPROM memory by given value
+         */
+        void writeAll(byte value);
 };
 
 #endif /* !EEPROM_H! */

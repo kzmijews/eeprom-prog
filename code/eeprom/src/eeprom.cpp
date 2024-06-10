@@ -103,12 +103,21 @@ void EEPROM::print(byte data_row_size, unsigned int data_total_size) {
     Serial.println("\n");
 }
 
-void EEPROM::clean() {
-    const byte EMPTY_BYTE = 0xFF;
+void EEPROM::writeAll(byte value) {
     for(unsigned int address = 0x0; address < EEPROM_SIZE; address++) {
         byte curr_byte_val = read(address);
-        if(curr_byte_val != EMPTY_BYTE) {
-            write(address, EMPTY_BYTE);
+        if(curr_byte_val != value) {
+            write(address, value);
         }
     }
+}
+
+void EEPROM::clean() {
+    const byte EMPTY_BYTE = 0x00;
+    writeAll(EMPTY_BYTE);
+}
+
+void EEPROM::erase() {
+    const byte ERASED_BYTE = 0xFF;
+    writeAll(ERASED_BYTE);
 }

@@ -5,3 +5,5 @@ read	KEYWORD2
 write	KEYWORD2
 print	KEYWORD2
 clean	KEYWORD2
+erase	KEYWORD2
+writeAll	KEYWORD2

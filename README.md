@@ -56,7 +56,9 @@ Available API:
 - **read(unsigned int address)**: read byte of data from memory address
 - **write(unsigned int address, byte data)**: write byte of data under memory address
 - **print(byte data_row_size, unsigned int data_total_size)**: print on serial output (COM) piece of memory content
-- **clean()**: erase whole memory chip (write 0xFF)
+- **clean()**: write whole memory chip with value 0x00
+- **erase()**: erase whole memory chip by writing 0xFF
+- **writeAll(byte value)**: write whole memory chip with given value
 
 Example:
 ```cpp
